@@ -1,6 +1,6 @@
 import sys
 
-registry = []
+used = False
 
 def get_input():
     if not sys.stdin.isatty():
@@ -15,11 +15,11 @@ def get_input():
 
 def pipeable(transform=None):
     def real_pipeable(func):
-        if len(registry) > 0:
-            print('Error: only one function may be marked as a pipeline step.')
-            exit()
+        global used
+        if used:
+            raise Exception('Error: cannot decorate multiple functions with @pipeable!')
 
-        registry.append(func)
+        used = True
         def wrapper_func():
             inp = get_input()
             if transform != None:
