@@ -28,3 +28,19 @@ And using the script:
 > echo 'This is a test.' | python test.py
 This is a test.
 ```
+
+The example above can also be achieved with the following since @pipeable will write whatever is returned from the decorated function to stdout.
+
+test.py
+```python
+from pipeable import pipe
+
+@pipe()
+def print_input(inp):
+  return inp
+```
+
+```
+> echo 'This is another test.' | python test.py
+This is another test.
+```
