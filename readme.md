@@ -7,6 +7,14 @@ __Example__:
 > echo 'test' | python test.py
 ```
 
+## Installation
+
+You may install @pipeable with the following.
+
+```
+pip install pipeable
+```
+
 ## Usage
 
 The main component of @pipeable is the pipe decorator. The pipe decorator is used to specify the entrance point into a "pipeable" Python script. A function that is decorated with the pipe decorator should take one argument as input. The value that is read from stdin will be automatically bound to that input.
