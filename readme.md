@@ -29,7 +29,7 @@ And using the script:
 This is a test.
 ```
 
-The example above can also be achieved with the following since @pipeable will write whatever is returned from the decorated function to stdout.
+The example above can also be achieved with the following, since @pipeable will write whatever is returned from the decorated function to stdout.
 
 test.py
 ```python
