@@ -1,6 +1,6 @@
 # @pipeable
 
-@pipeable is a nifty Python package that allows users to make their own python scripts "pipeable". In essence, @pipeable allows Python scripts to easily accept input from stdin and write to stdout along with a few additional bells and whistles. This allows users to use their Python scripts in conjunction with the | (pipe) operator from the command line.
+@pipeable is a nifty Python package that allows developers to make their own python scripts "pipeable". In essence, @pipeable allows Python scripts to easily accept input from stdin and write to stdout along with a few additional bells and whistles. This allows developers to use their Python scripts in conjunction with the | (pipe) operator from the command line.
 
 __Example__:
 ```
