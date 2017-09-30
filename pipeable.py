@@ -1,5 +1,6 @@
 import sys
 
+# Used to denote whether the pipe decorator has previously been used.
 used = False
 
 ##### Private. Strongly discouraged from external use.
