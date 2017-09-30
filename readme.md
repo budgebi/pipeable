@@ -4,9 +4,27 @@
 
 Example:
 ```
-echo 'test' | python test.py
+> echo 'test' | python test.py
 ```
 
 ## Usage
 
-The main component of @pipeable is the pipe decorator.
+The main component of @pipeable is the pipe decorator. The pipe decorator is used to specify the entrance point into a "pipeable" Python script. A function that is decorated with the pipe decorator should take one argument as input. The value that is read from stdin will be automatically bound to that input.
+
+Example:
+
+test.py
+```python
+from pipeable import pipe
+
+@pipe()
+def print_input(inp):
+  print(inp)
+```
+
+And using the script:
+
+```
+> echo 'This is a test.' | python test.py
+This is a test.
+```

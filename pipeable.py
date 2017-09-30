@@ -2,7 +2,7 @@ import sys
 
 used = False
 
-def __get_input():
+def _get_input():
     """ Gets the input from stdin if it exists.
         Otherwise, it looks for a command line argument.
         Raises an error if no argument is given. """
@@ -26,7 +26,7 @@ def pipe(transform=None):
 
         used = True
         def wrapper_func():
-            inp = __get_input()
+            inp = _get_input()
             if transform != None:
                 func(transform(inp))
             else:
