@@ -2,6 +2,25 @@ import sys
 
 used = False
 
+##### Private. Strongly discouraged from external use.
+def __execute(func, transform, inp):
+    """ Execute the decorated function. If transform is not None, then transform the input.
+        Otherwise, pass in the raw input. """
+    out = None
+    if transform != None:
+        out = func(transform(inp))
+    else:
+        out = func(inp)
+    return out
+
+def __verify_single_use():
+    """ Ensures that the pipe decorator is only used on a single function. """
+    global used
+    if used:
+        raise Exception('cannot decorate multiple functions with @pipe!')
+    used = True
+
+##### Discouraged from external use.
 def _get_input():
     """ Gets the input from stdin if it exists.
         Otherwise, it looks for a command line argument.
@@ -16,25 +35,16 @@ def _get_input():
             raise IndexError(message)
     return inp
 
-def __execute(func, transform, inp):
-    """ Execute the decorated function. If transform is not None, then transform the input.
-        Otherwise, pass in the raw input. """
-    out = None
-    if transform != None:
-        out = func(transform(inp))
-    else:
-        out = func(inp)
-    return out
 
+##### Intended public API
 def pipe(transform=None):
     """ Decorator to read the input from stdin or as a command line argument
         and pass the result to the decorated function. """
-    def pipe_in(func):
-        global used
-        if used:
-            raise Exception('Error: cannot decorate multiple functions with @pipe!')
 
-        used = True
+    __verify_single_use()
+
+    def pipe_in(func):
+        """ This is the real decorator returned from calling pipe(). """
         def wrapper_func():
             inp = _get_input()
             out = __execute(func, transform, inp)
