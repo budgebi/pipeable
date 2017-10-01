@@ -1,7 +1,7 @@
 import sys
 
 # Used to denote whether the pipe decorator has previously been used.
-used = False
+__used = False
 
 ##### Private. Strongly discouraged from external use.
 def __execute(func, transform, inp):
@@ -16,10 +16,10 @@ def __execute(func, transform, inp):
 
 def __verify_single_use():
     """ Ensures that the pipe decorator is only used on a single function. """
-    global used
-    if used:
+    global __used
+    if __used:
         raise Exception('cannot decorate multiple functions with @pipe!')
-    used = True
+    __used = True
 
 ##### Discouraged from external use.
 def _get_input():

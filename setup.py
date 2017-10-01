@@ -1,4 +1,4 @@
-from distutils.core import setup
+from distutils.core import setup, find_packages
 
 setup(name='pipeable',
       version='0.0.0',
@@ -7,7 +7,7 @@ setup(name='pipeable',
       author_email='budgebrian21@gmail.com',
       url='https://github.com/budgebi/pipeable',
       license='MIT',
-      py_modules=['pipeable'],
+      packages=find_packages(exclude=('tests')),
       classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
