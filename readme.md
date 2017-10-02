@@ -55,7 +55,7 @@ This is another test.
 
 __transform__
 
-You may have noticed that to use the Pipe decorator we do this '@Pipe()' instead of this '@Pipe'. This is because you may optionally pass in a function as an argument to Pipe which "transforms" the string read from stdin in some way. Let's look at another simple example to demonstrate the point.
+You may have noticed that to use the Pipe decorator we do this `@Pipe()` instead of this `@Pipe`. This is because you may optionally pass in a function as an argument to Pipe which "transforms" the string read from stdin in some way. Let's look at another simple example to demonstrate the point.
 
 add_4.py
 ```python
