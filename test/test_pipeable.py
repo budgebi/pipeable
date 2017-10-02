@@ -18,9 +18,13 @@ class PipeableTest(unittest.TestCase):
             def return_y(y):
                 return y
 
-    # def test_pipe_returns_decorator(self):
-    #     """ Verify that the pipe function returns a decorator. """
-    #     self.assertTrue(callable(p.pipe()))
+    def test_execute(self):
+        """ Test the execute function which could have a null transform. """
+        x = '1'
+        def id(x):
+            return x
+        self.assertEqual(p.Pipe()._Pipe__execute(id, None, x), x)
+        self.assertEqual(p.Pipe()._Pipe__execute(id, int, x), 1)
 
 if __name__ == '__main__':
     unittest.main()
