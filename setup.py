@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='pipeable',
-      version='0.0.0',
+      version='1.0.0',
       description='A utility for making Python scripts compatible with the | operator on the command line.',
       author='Brian Budge',
       author_email='budgebrian21@gmail.com',
