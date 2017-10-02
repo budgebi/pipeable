@@ -74,6 +74,7 @@ def add_4(inp):
 Since we passed the int function in as a transform to our Pipe decorator, the string read from stdin will be converted into an int before it is passed into the add_4 function which was decorated. Since inp is an int, we can add 4 to it without issue.
 
 __A more advanced example:__
+
 Suppose we have the following Python code, which can write JSON to a Mongo Database.
 
 to_db.py
