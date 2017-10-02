@@ -6,9 +6,11 @@ used = False
 class Pipe:
 
     def __init__(self, transform=None):
+        """ Initer will take the transformation to be applied to the string read from stdin. """
         self.transform = transform
 
     def __call__(self, func):
+        """ __call__ is the function which will decorate other functions. """
         self.__verify_single_use()
 
         def wrapper_func():
