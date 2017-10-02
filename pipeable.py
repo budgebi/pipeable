@@ -1,24 +1,24 @@
 import sys
 
+# Used to denote whether the pipe decorator has previously been used.
 used = False
 
 class Pipe:
-    # Used to denote whether the pipe decorator has previously been used.
 
     def __init__(self, transform=None):
         self.transform = transform
 
-    def __call__(self, f):
+    def __call__(self, func):
         self.__verify_single_use()
 
         def wrapper_func():
             inp = self._get_input()
-            out = self.__execute(func, transform, inp)
+            out = self.__execute(func, self.transform, inp)
 
             if out != None:
                 sys.stdout.write(str(out))
 
-            wrapper_func()
+        wrapper_func()
 
 
     ##### Private. Strongly discouraged from external use.
