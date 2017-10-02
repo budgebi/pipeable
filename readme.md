@@ -53,7 +53,7 @@ def print_input(inp):
 This is another test.
 ```
 
-__transform__
+__Transforming the input__
 
 You may have noticed that to use the Pipe decorator we do this `@Pipe()` instead of this `@Pipe`. This is because you may optionally pass in a function as an argument to Pipe which "transforms" the string read from stdin in some way. Let's look at another simple example to demonstrate the point.
 
@@ -71,7 +71,7 @@ def add_4(inp):
 7
 ```
 
-Since we passed the int function in as a transform to our Pipe decorator, the string read from stdin will be converted into an int before it is passed into the add_4 function which was decorated. Since inp is an int, we can add 4 to it without issue.
+Since we passed the int function in as a transformation to our Pipe decorator, the string read from stdin will be converted into an int before it is passed into the add_4 function which was decorated. Since inp is an int, we can add 4 to it without issue.
 
 __A more advanced example:__
 
@@ -95,7 +95,7 @@ def write_json_to_db(j):
     print(j)
 ```
 
-Since we decorated the write_json_to_db function with our Pipe decorator and provided json.loads as our transformation function, our script can now read a JSON string from stdin, load that JSON into a Python dictionary, and write the result to a MongoDB.
+Since we decorated the write_json_to_db function with our Pipe decorator and provided json.loads as our transformation function, our script can now read a JSON string from stdin, load that JSON into a Python list, and write the result to a MongoDB.
 
 Example usage:
 ```
