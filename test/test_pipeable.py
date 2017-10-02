@@ -9,14 +9,18 @@ class PipeableTest(unittest.TestCase):
 
     def test_single_use(self):
         """ Verify that the pipe decorator can only be used once. """
-        @p.pipe()
+        @p.Pipe()
         def return_x(x):
             return x
 
         with self.assertRaises(Exception):
-            @p.pipe()
+            @p.Pipe()
             def return_y(y):
                 return y
+
+    # def test_pipe_returns_decorator(self):
+    #     """ Verify that the pipe function returns a decorator. """
+    #     self.assertTrue(callable(p.pipe()))
 
 if __name__ == '__main__':
     unittest.main()
