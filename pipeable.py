@@ -38,7 +38,7 @@ class Pipe:
         """ Ensures that the pipe decorator is only used on a single function. """
         global used
         if used:
-            raise Exception('cannot decorate multiple functions with @pipe!')
+            raise Exception('cannot decorate multiple functions with @Pipe()!')
         used = True
 
     ##### Discouraged from external use.
