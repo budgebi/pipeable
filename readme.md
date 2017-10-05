@@ -1,6 +1,6 @@
-# @pipeable
+# Pipeable
 
-@pipeable is a nifty Python package that allows developers to make their own python scripts "pipeable". In essence, @pipeable allows Python scripts to easily accept input from stdin and write to stdout along with a few additional bells and whistles. This allows developers to use their Python scripts in conjunction with the | (pipe) operator from the command line.
+Pipeable is a nifty Python package that allows developers to make their own python scripts "pipeable". In essence, Pipeable allows Python scripts to easily accept input from stdin and write to stdout along with a few additional bells and whistles. This allows developers to use their Python scripts in conjunction with the | (pipe) operator from the command line.
 
 __Example__:
 ```
@@ -9,7 +9,7 @@ __Example__:
 
 ## Installation
 
-You may install @pipeable with the following.
+You may install Pipeable with the following.
 
 ```
 pip install pipeable
@@ -17,7 +17,7 @@ pip install pipeable
 
 ## Usage
 
-The main component of @pipeable is the Pipe decorator. The Pipe decorator is used to specify the entrance point into a "pipeable" Python script. A function that is decorated with the Pipe decorator should take one argument as input. The value that is read from stdin will be automatically bound to that input.
+The main component of Pipeable is the Pipe decorator. The Pipe decorator is used to specify the entrance point into a "pipeable" Python script. A function that is decorated with the Pipe decorator should take one argument as input. The value that is read from stdin will be automatically bound to that input.
 
 __Example__:
 
@@ -37,7 +37,7 @@ And using the script:
 This is a test.
 ```
 
-The example above can also be achieved with the following, since @pipeable will write whatever is returned from the decorated function to stdout.
+The example above can also be achieved with the following, since Pipeable will write whatever is returned from the decorated function to stdout.
 
 test.py
 ```python
