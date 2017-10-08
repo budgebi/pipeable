@@ -19,6 +19,7 @@ class Pipe:
 
             if out != None:
                 sys.stdout.write(str(out))
+                sys.stdout.flush()
 
         wrapper_func()
 
