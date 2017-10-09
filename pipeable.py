@@ -23,8 +23,6 @@ class Pipe:
 
         wrapper_func()
 
-
-    ##### Private. Strongly discouraged from external use.
     def __execute(self, func, transform, inp):
         """ Execute the decorated function. If transform is not None, then transform the input.
         Otherwise, pass in the raw input. """
@@ -42,7 +40,6 @@ class Pipe:
             raise Exception('cannot decorate multiple functions with @Pipe()!')
         used = True
 
-    ##### Discouraged from external use.
     def _get_input(self):
         """ Gets the input from stdin if it exists.
             Otherwise, it looks for a command line argument.
